@@ -1,0 +1,390 @@
+<html>
+<title>Attributed Graph Models</title>
+<head>
+<style type="text/css">
+BODY 
+{
+border-width:5px 100px;
+border-style:solid;
+background-color:#FFFFFF;
+border-color:#FFFFFF;
+font-family:optima helvetica sans-serif;
+}
+TABLE
+{
+background-color:#FFFFFF;
+padding-right: 150;
+}
+
+td.bars
+{
+background-color:#000000;
+padding-color:#000000;
+border-color:#000000;
+color:#000000;
+}
+.heading {
+  font-weight: normal;
+  color: black;
+  font-size: 22px;
+  padding-left: 15;
+  border-bottom: blue 2px solid;
+}
+.subheading {
+  font-weight: normal;
+  color: black;
+  font-size: 17px;
+  padding-left: 15;
+  border-bottom: blue 1px solid;
+}
+
+td
+{
+padding: 10px 10px; 
+}
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+  }
+
+a:hover { 
+  text-decoration: underline;
+  }
+.pub_name {
+  font-size: 14px;
+  font-family: optima, verdana, sans-serif;
+  color: charcoal;
+  background: none;
+  font-weight: bold;
+  text-align: left;
+  margin: 10px 0px 1px 0px;
+}
+
+
+
+/* ===== Datasets table ===== */
+/* CSS Modified from http://snap.stanford.edu/data/ */
+#datatab2
+{
+background: white;
+margin: 10px;
+border-collapse: collapse;
+text-align: left;
+width: 95%;
+}
+
+#datatab2 th
+{
+font-size: 14px;
+font-weight: normal;
+color: white;
+background: #8888ff;
+padding: 5px 10px;
+text-align: left;
+}
+
+#datatab2 td
+{
+border-bottom: 1px solid #ccc;
+color: black;
+padding: 3px 8px;
+}
+
+#datatab2 tbody tr:hover td {
+color: #000;
+background: #eeeeee;
+}
+
+</style>
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+<!--
+function sizeTbl(t) {
+  var tbl = document.getElementById(t);
+  if (tbl.style.display == 'block') {
+  tbl.style.display = 'none';
+  }
+  else {
+  tbl.style.display = 'block';
+  }
+}
+// -->
+</script>
+<table id="maintable" width="100%">
+<tr>
+<td width="180" valign="top" align="left">
+<div align="center" style="margin: 5px 0px 15px 0px">
+<img src="../pic.jpg" width="150">
+</div>
+<div style="font-size: x-large; font-weight: bold; border-bottom: blue 2px solid"><a href="../index.html">Joel Pfeiffer</a></div>
+<div style="margin: 2px 0px 2px 0px"> 
+<div style="font-size: x-small; font-style: italic">Joseph J. Pfeiffer, III</div>
+</div>
+
+<div style="font-size: small">jpfeiffer at purdue dot edu</div>
+</div>
+<div style="font-size: small; margin: 5px 0px 5px 0px"><p> 
+<a href="http://www.cs.purdue.edu/resources/lawson/">Lawson 2149 #20</a><br>
+<a href="http://www.purdue.edu/">Purdue University</a> <br>
+<a href="http://www.cs.purdue.edu">Department of Computer Science</a> <br>
+<a href="http://maps.google.com/maps?client=ubuntu&channel=cs&q=305+North+University+Street+West+Lafayette,+IN+47907-2066&ie=UTF8&hq=&hnear=305+University+St,+West+Lafayette,+Tippecanoe,+Indiana+47907&gl=us&t=h&z=16">305 North University Street <br>
+West Lafayette, IN 47907-2066</a>
+<br><br>
+<a href="http://www.linkedin.com/pub/joseph-pfeiffer/37/17/578"><img src="http://s.c.lnkd.licdn.com/scds/common/u/img/webpromo/btn_liprofile_blue_80x15.png" width="80" height="15" \
+border="0" alt="View Joseph Pfeiffer's profile on LinkedIn"></a></p>
+</div>
+</td>
+<td class="padding2" rowspan="2" valign="top">
+<div class="heading" id="research" style="margin: 0px 0px 10px 0px">Attributed Graph Models</div>
+<div style="margin: 0px 0px 5 px 0px">
+<b> Under Construction -- working on putting this together.</b>
+<p>
+This page distributes a number of networks sampled through the Attributed Graph Model (AGM) framework.  AGM allows for sampling
+a set of edges conditioned on the attributes of endpoints, meaning that the resulting set of (randomized) networks have clustering,
+graph distances, degree distributions, etc., as prescribed by their corresponding structural graph model, while having
+vertex attributes which correlate across the edges.  When using or analyzing the sampled networks, please cite the following:
+</p>
+<div class="pub_name">Attributed Graph Models: Modeling network structure with correlated attributes</div>
+Joseph J. Pfeiffer III, Sebastian Moreno, Timothy La Fond, Jennifer Neville and Brian Gallagher <br>
+In Proceedings of the 23rd International World Wide Web Conference (WWW 2014), 2014
+<br>
+<a href="../pubs/AGM_WWW2014.pdf" style="font-size: small">[PDF]</a>
+<a href="javascript:sizeTbl('www2014')", style="font-size: small">[BibTeX]</a>
+<div id=www2014 style="overflow:hidden;display:none">
+<blockquote>
+<pre>
+@inproceedings {www2014,
+author = {Joseph J. {Pfeiffer III} and Sebastian Moreno and Timothy {La Fond} and Jennifer Neville and Brian Gallagher},
+title = {Attributed Graph Models: Modeling network structure with correlated attributes.},
+year = {2014},
+booktitle = {Proceedings of the 23rd International World Wide Web Conference (WWW 2014)}
+}
+</pre>
+</blockquote>
+</div>
+
+<p>
+In addition to the above citation, each (a) structural model and (b) original dataset should be cited, when applicable.  As the original
+datasets are the property of the original authors we do not distribute them (unless they request it); rather, we provide links 
+to locations where their datasets can be found (if they are publically available).
+</p>
+
+</div>
+<div class="heading" id="files" style="margin: 0px 0px 10px 0px">Synthetic Dataset Downloads</div>
+<p>
+Currently all local models of the attributes P(X) are Naive Bayes, with attributes conditioned on label, rather than the full joint (when only 1 or 2 attributes it is obviously equivalent).
+Conversely, the P(f(X)|E) vary depending on the dataset and are generally more complex.  This was done as our goal is to demonstrate how to model correlation across edges between different variables.
+</p>
+
+<table id="datatab2" summary="Table of datasets" border=1>
+<tr>
+  <th>Dataset</th>
+  <th>Nodes</th>
+  <th>Edges</th>
+  <th style="min-wdith: 70px">Attr Tot/Mod</th>
+  <th style="min-width: 60px">Data Cite</th>
+  <th style="min-width: 70px">Struct Cite</th>
+  <th>Description</th>
+</tr>
+<tr><td colspan="7"></td></tr>
+<tr>
+  <td><a href="agm_datasets/cora_agm_fcl_aid.tar.gz">cora_agm_fcl</a></td>
+  <td>11,258</td>
+  <td>31,482</td>
+  <td>1/1</td>
+  <td>CoRA [4]</td>
+  <td>FCL [1]</td>
+  <td>CoRA citations dataset.  FCL model used as proposal distribution.  Attribute modeled is whether the topic is AI or not.</td>
+</tr>
+<tr>
+  <td><a href="agm_datasets/cora_agm_tcl_aid.tar.gz">cora_agm_tcl</a></td>
+  <td>11,258</td>
+  <td>31,482</td>
+  <td>1/1</td>
+  <td>CoRA [4]</td>
+  <td>TCL [2]</td>
+  <td>CoRA citations dataset.  TCL model used as proposal distribution.  Attribute modeled is whether the topic is AI or not.</td>
+</tr>
+<tr>
+  <td><a href="agm_datasets/cora_agm_kpgm2x2_aid.tar.gz">cora_agm_kpgm2x2</a></td>
+  <td>16,384</td>
+  <td>33,699</td>
+  <td>1/1</td>
+  <td>CoRA [4]</td>
+  <td>KPGM [3]</td>
+  <td>CoRA citations dataset.  KPGM 2x2 model used as proposal distribution.  Attribute modeled is whether the topic is AI or not.</td>
+</tr>
+<tr>
+  <td><a href="agm_datasets/cora_agm_kpgm3x3_aid.tar.gz">cora_agm_kpgm3x3</a></td>
+  <td>19,683</td>
+  <td>33,137</td>
+  <td>1/1</td>
+  <td>CoRA [4]</td>
+  <td>KPGM [3]</td>
+  <td>CoRA citations dataset.  KPGM 3x3 model used as proposal distribution.  Attribute modeled is whether the topic is AI or not.</td>
+</tr>
+<tr><td colspan="7"></td></tr>
+<tr>
+  <td><a href="agm_datasets/facebook_agm_large_fcl_aid.tar.gz">facebook_agm_large_fcl</a></td>
+  <td>444,817</td>
+  <td>1,016,621</td>
+  <td>2/2</td>
+  <td>N/A</td>
+  <td>FCL [1]</td>
+  <td>Facebook wall posting dataset.  FCL model used as proposal distribution.  Joint distribution of religion (label) and conservative (attr) is used.</td>
+</tr>
+<tr>
+  <td><a href="agm_datasets/facebook_agm_large_tcl_aid.tar.gz">facebook_agm_large_tcl</a></td>
+  <td>444,817</td>
+  <td>1,016,621</td>
+  <td>2/2</td>
+  <td>N/A</td>
+  <td>TCL [2]</td>
+  <td>Facebook wall posting dataset.  TCL model used as proposal distribution.  Joint distribution of religion (label) and conservative (attr) is used.</td>
+</tr>
+<tr>
+  <td><a href="agm_datasets/facebook_agm_large_kpgm2x2_aid.tar.gz">facebook_agm_large_kpgm2x2</a></td>
+  <td>524,288</td>
+  <td>924,759</td>
+  <td>2/2</td>
+  <td>N/A</td>
+  <td>KPGM [3]</td>
+  <td>Facebook wall posting dataset.  KPGM with 2x2 initiator matrix used as proposal distribution.  Joint distribution of religion (label) and conservative (attr) is used.</td>
+</tr>
+<tr>
+  <td><a href="agm_datasets/facebook_agm_large_kpgm3x3_aid.tar.gz">facebook_agm_large_kpgm3x3</a></td>
+  <td>531,441</td>
+  <td>1,303,771</td>
+  <td>2/2</td>
+  <td>N/A</td>
+  <td>KPGM [3]</td>
+  <td>Facebook wall posting dataset.  KPGM with 3x3 initiator matrix used as proposal distribution.  Joint distribution of religion (label) and conservative (attr) is used.</td>
+</tr>
+
+<tr><td colspan="7"></td></tr>
+<tr>
+  <td><a href="agm_datasets/facebook_agm_small_fcl_aid.tar.gz">facebook_agm_small_fcl</a></td>
+  <td>5,906</td>
+  <td>36,685</td>
+  <td>3/3</td>
+  <td>N/A</td>
+  <td>FCL [1]</td>
+  <td>Facebook friendships.  Religion, conservative and gender are jointly modeled.</td>
+</tr>
+<tr>
+  <td><a href="agm_datasets/facebook_agm_small_tcl_aid.tar.gz">facebook_agm_small_tcl</a></td>
+  <td>5,906</td>
+  <td>36,685</td>
+  <td>3/3</td>
+  <td>N/A</td>
+  <td>TCL [2]</td>
+  <td>Facebook friendships.  Religion, conservative and gender are jointly modeled.</td>
+</tr>
+
+<tr><td colspan="7"></td></tr>
+<tr>
+  <td><a href="agm_datasets/amazon_agm_DVD_10000_fcl_aid.tar.gz">amazon_agm_DVD_fcl</a></td>
+  <td>16,118</td>
+  <td>37,798</td>
+  <td>28/1</td>
+  <td>Amazon[5]</td>
+  <td>FCL [1]</td>
+  <td>Amazon DVD copurchases.  Attributes drawn from NB (conditioned on religion label).  Edges conditioned on label.  Label is whether salesrank is better than 10,000.</td>
+</tr>
+<tr>
+  <td><a href="agm_datasets/amazon_agm_DVD_10000_tcl_aid.tar.gz">amazon_agm_DVD_tcl</a></td>
+  <td>16,118</td>
+  <td>37,798</td>
+  <td>28/1</td>
+  <td>Amazon[5]</td>
+  <td>TCL [2]</td>
+  <td>Amazon DVD copurchases.  Attributes drawn from NB (conditioned on religion label).  Edges conditioned on label.  Label is whether salesrank is better than 10,000.</td>
+</tr>
+
+<tr><td colspan="7"></td></tr>
+<tr>
+  <td><a href="agm_datasets/amazon_agm_Music_10000_fcl_aid.tar.gz">amazon_agm_Music_fcl</a></td>
+  <td>56,891</td>
+  <td>136,272</td>
+  <td>26/1</td>
+  <td>Amazon[5]</td>
+  <td>FCL [1]</td>
+  <td>Amazon Music copurchases.  Attributes drawn from NB (conditioned on religion label).  Edges conditioned on label.  Label is whether salesrank is better than 10,000.</td>
+</tr>
+<tr>
+  <td><a href="agm_datasets/amazon_agm_Music_10000_tcl_aid.tar.gz">amazon_agm_Music_tcl</a></td>
+  <td>56,891</td>
+  <td>136,272</td>
+  <td>26/1</td>
+  <td>Amazon[5]</td>
+  <td>TCL [2]</td>
+  <td>Amazon Music copurchases.  Attributes drawn from NB (conditioned on religion label).  Edges conditioned on label.  Label is whether salesrank is better than 10,000.</td>
+</tr>
+</table>
+
+
+
+
+<div class="heading" id="relatedwork" style="margin: 0px 0px 10px 0px">Related Work</div>
+<table id="datatab2" summary="Table of datasets" border=1>
+<tr>
+  <th>Citation Number</th>
+  <th>Citation Information</th>
+  <th>Further Information</th>
+</tr>
+<tr>
+  <td>[1]</td>
+  <td><div class="pub_name">The average distances in random graphs with given expected degrees.</div>F. Chung and L. Lu <br>Internet Mathematics, 1, 2002</td>
+  <td></td>
+</tr>
+<tr>
+  <td>[2]</td>
+  <td><div class="pub_name">Fast Generation of Large Scale Social Networks While Incorporating Transitive Closures.</div> J. J. Pfeiffer III, T. La Fond, S. Moreno and J. Neville <br> In Proceedings of the Fourth ASE/IEEE International Conference on Social Computing, 2012 </td>
+  <td></td>
+</tr>
+<tr>
+  <td>[3]</td>
+  <td><div class="pub_name">Kronecker Graphs: An Approach to Modeling Networks.</div> J. Leskovec, D. Chakrabarti, J. Kleinberg, C. Faloutsos and Z. Gharamani <br> In Journal of Machine Learning Research 11 (2010), Pages 985-1042</td>
+  <td></td>
+</tr>
+<tr>
+  <td>[4]</td>
+  <td><div class="pub_name">Automating the Construction of Internet Portals with Machine Learning.</div>A. McCallum, K. Nigam, J. Rennie and K. Seymore <br> In Journal of Information Retrieval 3, Issue 2 (2000), Pages 127-163</td>
+  <td><a href="http://people.cs.umass.edu/~mccallum/data.html">Dataset Download</a></td>
+</tr>
+<tr>
+  <td>[5]</td>
+  <td><div class="pub_name">The Dynamics of Viral Marketing.</div> J. Leskovec, L. Adamic and B. Adamic<br> ACM Transactions on the Web (ACM TWEB), 1(1), 2007</td>
+  <td><a href="http://snap.stanford.edu/data/amazon-meta.html">Dataset Download</a></td>
+</tr>
+</table>
+
+
+
+</tr>
+
+
+
+
+
+</table>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-15958418-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body> 
+
+</html>

@@ -1,0 +1,4 @@
+AuthName "Password Controlled Area"
+AuthType Basic
+AuthUserFile /homes/jpfeiff/http_passwd
+Require valid-user
