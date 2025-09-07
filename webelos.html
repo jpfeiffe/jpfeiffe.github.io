@@ -334,8 +334,8 @@
                         <th class="adventure-col">Adventure</th>
                         <th class="description-col">Description</th>
                         <th class="description-col">Planner</th>
-                        <th class="description-col">Helper 1</th>
-                        <th class="description-col">Helper 2</th>
+                            <th class="description-col">Helper1</th>
+                            <th class="description-col">Helper2</th>
                         <th class="description-col">Snacks</th>
                     </tr>
                 </thead>
@@ -547,8 +547,8 @@
                     "Adventure": row["Adventure"] || '',
                     "Adventure Type": row["Adventure Type"] || row["Type"] || '',
                     "Planner": row["Planner"] || '',
-                    "Helper1": row["Helper1"] || row["Helper 1"] || '',
-                    "Helper2": row["Helper2"] || row["Helper 2"] || '',
+                        "Helper1": row["Helper1"] || row["Helper 1"] || '',
+                        "Helper2": row["Helper2"] || row["Helper 2"] || '',
                     "Snacks": row["Snacks"] || '',
                     "Description": row["Description"] || ''
                 }));
@@ -561,316 +561,21 @@
                 console.error('Error loading from Google Sheet:', error);
                 document.getElementById('loadingMessage').innerHTML = 
                     '<p style="color: red;">Error loading schedule data. Please check the Google Sheet URL and permissions.</p>';
-                // Fallback to default data if available
-                loadFallbackData();
             }
         }
         
-        // Fallback data function
-        function loadFallbackData() {
-            // COMPLETE EVENTS DATA - 20 events with Adventures (fallback data)
-            completeSchedule = [
-            {
-                "Event #": 1,
-                "Date": "9/13/2025",
-                "Start Time": "9:00 AM",
-                "End Time": "9:45 AM",
-                "Event Title": "Den Meeting",
-                "Location": "Stipek Park",
-                "Adventure": "Bobcat Adventure",
-                "Adventure Type": "Required",
-                "Planner": "<span style='color: green;'>Joel Pfeiffer</span>",
-                "Helper1": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper2": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Snacks": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Description": "Work on Bobcat Adventure requirements. Complete rank advancement activities."
-            },
-            {
-                "Event #": 2,
-                "Date": "9/13/2025",
-                "Start Time": "10:00 AM",
-                "End Time": "11:00 AM",
-                "Event Title": "Pack Meeting",
-                "Location": "Stipek Park",
-                "Adventure": "N/A",
-                "Adventure Type": "N/A",
-                "Planner": "N/A",
-                "Helper1": "N/A",
-                "Helper2": "N/A",
-                "Snacks": "N/A",
-                "Description": "Monthly recurring pack meeting. Location will be Stipek park, unless otherwise communicated due to weather or special events"
-            },
-            {
-                "Event #": 3,
-                "Date": "9/20/2025",
-                "Start Time": "5:00 PM",
-                "End Time": "12:00 PM (Sun)",
-                "Event Title": "Fall Family Camp",
-                "Location": "Camp Edwards",
-                "Adventure": "Webelos Walkabout & Let's Camp Webelos",
-                "Adventure Type": "Required & Elective",
-                "Planner": "N/A",
-                "Helper1": "N/A",
-                "Helper2": "N/A",
-                "Snacks": "N/A",
-                "Description": "Weekend family camping event. We will work on the Webelos Walkabout (Required) and Let's Camp Webelos (Elective) adventures. Friday evening through Sunday afternoon at Camp Edwards."
-            },
-            {
-                "Event #": 4,
-                "Date": "10/11/2025",
-                "Start Time": "9:00 AM",
-                "End Time": "9:45 AM",
-                "Event Title": "Den Meeting",
-                "Location": "TBD",
-                "Adventure": "My Community",
-                "Adventure Type": "Required",
-                "Planner": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper1": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper2": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Snacks": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Description": "Explore community helpers, local government, and community service projects."
-            },
-            {
-                "Event #": 5,
-                "Date": "10/11/2025",
-                "Start Time": "10:00 AM",
-                "End Time": "11:00 AM",
-                "Event Title": "Pack Meeting",
-                "Location": "TBD",
-                "Adventure": "N/A",
-                "Adventure Type": "N/A",
-                "Event Coordinators": "N/A",
-                "Description": "Stipek Park or First Lutheran Church of Bothell - Will decide and notify by mid-week before."
-            },
-            {
-                "Event #": 6,
-                "Date": "10/25/2025",
-                "Start Time": "9:00 AM",
-                "End Time": "9:45 AM",
-                "Event Title": "Den Meeting",
-                "Location": "TBD",
-                "Adventure": "Stronger, Faster, Higher",
-                "Adventure Type": "Required",
-                "Planner": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper1": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper2": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Snacks": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Description": "Physical fitness activities, sports skills, and healthy lifestyle habits."
-            },
-            {
-                "Event #": 7,
-                "Date": "11/8/2025",
-                "Start Time": "9:00 AM",
-                "End Time": "9:45 AM",
-                "Event Title": "Den Meeting",
-                "Location": "TBD",
-                "Adventure": "Elective Adventure",
-                "Adventure Type": "Elective",
-                "Planner": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper1": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper2": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Snacks": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Description": ""
-            },
-            {
-                "Event #": 8,
-                "Date": "11/8/2025",
-                "Start Time": "10:00 AM",
-                "End Time": "11:00 AM",
-                "Event Title": "Pack Meeting",
-                "Location": "TBD",
-                "Adventure": "N/A",
-                "Adventure Type": "N/A",
-                "Event Coordinators": "N/A",
-                "Description": "Stipek Park or First Lutheran Church of Bothell - Will decide and notify by mid-week before."
-            },
-            {
-                "Event #": 9,
-                "Date": "12/13/2025",
-                "Start Time": "9:00 AM",
-                "End Time": "9:45 AM",
-                "Event Title": "Den Meeting",
-                "Location": "TBD",
-                "Adventure": "Elective Adventure",
-                "Adventure Type": "Elective",
-                "Planner": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper1": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper2": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Snacks": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Description": ""
-            },
-            {
-                "Event #": 10,
-                "Date": "12/13/2025",
-                "Start Time": "10:00 AM",
-                "End Time": "11:00 AM",
-                "Event Title": "Pack Meeting",
-                "Location": "TBD",
-                "Adventure": "N/A",
-                "Adventure Type": "N/A",
-                "Event Coordinators": "N/A",
-                "Description": "Stipek Park or First Lutheran Church of Bothell - Will decide and notify by mid-week before."
-            },
-            {
-                "Event #": 11,
-                "Date": "1/10/2026",
-                "Start Time": "9:00 AM",
-                "End Time": "9:45 AM",
-                "Event Title": "Den Meeting",
-                "Location": "TBD",
-                "Adventure": "Elective Adventure",
-                "Adventure Type": "Elective",
-                "Planner": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper1": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper2": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Snacks": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Description": ""
-            },
-            {
-                "Event #": 12,
-                "Date": "1/10/2026",
-                "Start Time": "10:00 AM",
-                "End Time": "11:00 AM",
-                "Event Title": "Pack Meeting",
-                "Location": "TBD",
-                "Adventure": "N/A",
-                "Adventure Type": "N/A",
-                "Event Coordinators": "N/A",
-                "Description": "Stipek Park or First Lutheran Church of Bothell - Will decide and notify by mid-week before."
-            },
-            {
-                "Event #": 13,
-                "Date": "1/24/2026",
-                "Start Time": "9:00 AM",
-                "End Time": "9:45 AM",
-                "Event Title": "Den Meeting",
-                "Location": "TBD",
-                "Adventure": "Elective Adventure",
-                "Adventure Type": "Elective",
-                "Planner": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper1": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper2": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Snacks": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Description": ""
-            },
-            {
-                "Event #": 14,
-                "Date": "3/14/2026",
-                "Start Time": "10:00 AM",
-                "End Time": "12:00 PM",
-                "Event Title": "Blue & Gold / Crossover",
-                "Location": "First Lutheran Church of Bothell",
-                "Adventure": "N/A",
-                "Adventure Type": "N/A",
-                "Planner": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper1": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper2": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Snacks": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Description": "Blue & Gold & Crossover ceremony. Rank advancement for Lion - Webelos scouts. This is a combined celebration and crossover event."
-            },
-            {
-                "Event #": 15,
-                "Date": "4/18/2026",
-                "Start Time": "9:00 AM",
-                "End Time": "9:45 AM",
-                "Event Title": "Den Meeting",
-                "Location": "TBD",
-                "Adventure": "Elective Adventure",
-                "Adventure Type": "Elective",
-                "Planner": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper1": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper2": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Snacks": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Description": ""
-            },
-            {
-                "Event #": 16,
-                "Date": "4/18/2026",
-                "Start Time": "10:00 AM",
-                "End Time": "11:00 AM",
-                "Event Title": "Pack Meeting",
-                "Location": "TBD",
-                "Adventure": "N/A",
-                "Adventure Type": "N/A",
-                "Event Coordinators": "N/A",
-                "Description": "Stipek Park or First Lutheran Church of Bothell - Will decide and notify by mid-week before."
-            },
-            {
-                "Event #": 17,
-                "Date": "5/2/2026",
-                "Start Time": "9:00 AM",
-                "End Time": "9:45 AM",
-                "Event Title": "Den Meeting",
-                "Location": "TBD",
-                "Adventure": "Elective Adventure",
-                "Adventure Type": "Elective",
-                "Planner": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper1": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper2": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Snacks": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Description": ""
-            },
-            {
-                "Event #": 18,
-                "Date": "5/9/2026",
-                "Start Time": "9:00 AM",
-                "End Time": "9:45 AM",
-                "Event Title": "Den Meeting",
-                "Location": "TBD",
-                "Adventure": "Elective Adventure",
-                "Adventure Type": "Elective",
-                "Planner": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper1": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Helper2": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Snacks": "<span style='color: red;'>&lt;Sign-up!&gt;</span>",
-                "Description": ""
-            },
-            {
-                "Event #": 19,
-                "Date": "5/9/2026",
-                "Start Time": "10:00 AM",
-                "End Time": "11:00 AM",
-                "Event Title": "Pack Meeting",
-                "Location": "TBD",
-                "Adventure": "N/A",
-                "Adventure Type": "N/A",
-                "Event Coordinators": "N/A",
-                "Description": "Stipek Park or First Lutheran Church of Bothell - Will decide and notify by mid-week before."
-            },
-            {
-                "Event #": 20,
-                "Date": "7/9/2025",
-                "Start Time": "Check-in",
-                "End Time": "7/12 Check-out",
-                "Event Title": "Camp Pigott Webelos Camp",
-                "Location": "Camp Pigott, Snohomish, WA",
-                "Adventure": "Multiple Adventures",
-                "Adventure Type": "Elective",
-                "Event Coordinators": "N/A",
-                "Description": "4-day Webelos camp experience at Camp Pigott. Cost: $345 per Scout. More info: https://scoutingseattle.org/camp-pigott/webelos-camp/"
-            },
-            {
-                "Event #": 21,
-                "Date": "7/31/2026",
-                "Start Time": "???",
-                "End Time": "???",
-                "Event Title": "Resident Camp",
-                "Location": "Camp Edwards",
-                "Adventure": "Multiple Adventures",
-                "Adventure Type": "Elective",
-                "Event Coordinators": "N/A",
-                "Description": "Resident camp experience. Date not finalized."
-            }
-        ];
-        
-        // Populate fallback data
-        populateTable();
-        }
-
         // Populate the table dynamically
         function populateTable() {
             const tableBody = document.getElementById('scheduleTableBody');
             tableBody.innerHTML = '';
+
+            // Helper to format Sign-Up
+            function formatSignUp(val) {
+                if (typeof val === 'string' && val.trim().toLowerCase() === 'sign-up') {
+                    return '<span style="color: #ff0000; font-weight: bold;">&lt;Sign-Up!&gt;</span>';
+                }
+                return val;
+            }
 
             completeSchedule.forEach(event => {
                 const row = document.createElement('tr');
@@ -907,6 +612,12 @@
                 } else {
                      adventureDisplay = event["Adventure"];
                 }
+
+                // Format cells for Helper1, Helper2, Snacks, Planner
+                const plannerCell = formatSignUp(event["Planner"] || event["Event Coordinators"] || "N/A");
+                const helper1Cell = formatSignUp(event["Helper1"] || "N/A");
+                const helper2Cell = formatSignUp(event["Helper2"] || "N/A");
+                const snacksCell = formatSignUp(event["Snacks"] || "N/A");
                 
                 row.innerHTML = `
                     <td style="text-align: center;">
@@ -919,10 +630,10 @@
                     <td class="location-col ${event["Location"] === 'TBD' ? 'location-tbd' : ''}">${event["Location"]}</td>
                     <td class="adventure-col" style="${adventureStyle}">${adventureDisplay}</td>
                     <td class="description-col">${event["Description"]}</td>
-                    <td class="description-col" style="font-size: 12px;">${event["Planner"] || event["Event Coordinators"] || "N/A"}</td>
-                    <td class="description-col" style="font-size: 12px;">${event["Helper1"] || "N/A"}</td>
-                    <td class="description-col" style="font-size: 12px;">${event["Helper2"] || "N/A"}</td>
-                    <td class="description-col" style="font-size: 12px;">${event["Snacks"] || "N/A"}</td>
+                        <td class="description-col" style="font-size: 12px;">${plannerCell}</td>
+                        <td class="description-col" style="font-size: 12px;">${helper1Cell}</td>
+                        <td class="description-col" style="font-size: 12px;">${helper2Cell}</td>
+                        <td class="description-col" style="font-size: 12px;">${snacksCell}</td>
                 `;
                 
                 tableBody.appendChild(row);
@@ -943,7 +654,7 @@
 
         // Export to CSV function
         function exportToCSV() {
-            const headers = ['Event #', 'Date', 'Start Time', 'End Time', 'Event Title', 'Location', 'Adventure', 'Adventure Type', 'Description', 'Event Coordinators'];
+            const headers = ['Event #', 'Date', 'Start Time', 'End Time', 'Event Title', 'Location', 'Adventure', 'Adventure Type', 'Description', 'Planner'];
             let csvContent = headers.join(',') + '\n';
             
             completeSchedule.forEach(event => {
@@ -956,8 +667,8 @@
                     `"${event["Location"]}"`,
                     `"${event["Adventure"]}"`,
                     `"${event["Adventure Type"]}"`,
-                    `"${event["Description"].replace(/"/g, '""')}"`,
-                    `"${event["Event Coordinators"].replace(/<br>/g, '; ').replace(/"/g, '""')}"`
+                    `"${(event["Description"] || "").replace(/"/g, '""')}"`,
+                    `"${(event["Planner"] || "N/A").replace(/<br>/g, '; ').replace(/"/g, '""')}"`
                 ];
                 csvContent += row.join(',') + '\n';
             });
