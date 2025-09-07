@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webelos Den Schedule</title>
     <style>
-        body {
-                    .den-meeting:hover {
+        .den-meeting:hover {
             background: linear-gradient(90deg, #d4f4dd, #a8e6a3) !important;
         }
         
@@ -298,21 +297,6 @@
             </div>
         </div>
         
-        <div class="summary-cards">
-            <div class="card">
-                <h3 id="totalEvents">21</h3>
-                <p>Total Events</p>
-            </div>
-            <div class="card">
-                <h3 id="denMeetings">14</h3>
-                <p>Den Meetings</p>
-            </div>
-            <div class="card">
-                <h3 id="specialEvents">3</h3>
-                <p>Special Events</p>
-            </div>
-        </div>
-        
         <div class="controls">
             <button class="btn" onclick="window.open('https://docs.google.com/spreadsheets/d/14jO0oW-Xo3POnYAcapSEY_44sG7pz5btCI3zigAml3s/edit?gid=628523915#gid=628523915', '_blank')" title="Opens Google Sheets in a new tab">📅 Edit Calendar (Google Sheets)</button>
         </div>
@@ -338,8 +322,8 @@
                         <th class="adventure-col">Adventure</th>
                         <th class="description-col">Description</th>
                         <th class="description-col">Planner</th>
-                            <th class="description-col">Helper1</th>
-                            <th class="description-col">Helper2</th>
+                        <th class="description-col">Helper1</th>
+                        <th class="description-col">Helper2</th>
                         <th class="description-col">Snacks</th>
                     </tr>
                 </thead>
@@ -643,17 +627,6 @@
                 tableBody.appendChild(row);
             });
 
-            // Update summary counts
-            const denMeetingCount = completeSchedule.filter(event => 
-                event["Event Title"].toLowerCase().includes('den meeting')).length;
-            const specialEventCount = completeSchedule.filter(event => 
-                event["Event Title"].toLowerCase().includes('camp') || 
-                event["Event Title"].toLowerCase().includes('blue & gold') ||
-                event["Event Title"].toLowerCase().includes('crossover')).length;
-                
-            document.getElementById('totalEvents').textContent = completeSchedule.length;
-            document.getElementById('denMeetings').textContent = denMeetingCount;
-            document.getElementById('specialEvents').textContent = specialEventCount;
         }
 
         // Export to CSV function
