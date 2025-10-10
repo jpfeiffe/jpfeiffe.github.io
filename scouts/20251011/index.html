@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack 584 Meeting - October 11, 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .section.pack h2 {
+            border-bottom-color: #3498db;
+        }
+
+        .section.webelos h2 {
+            border-bottom-color: #e74c3c;
+        }
+
+        .file-list {
+            list-style: none;
+        }
+
+        .file-item {
+            margin-bottom: 12px;
+        }
+
+        .file-item a {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #2c3e50;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s;
+            font-size: 1em;
+        }
+
+        .file-item a:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .pack .file-item a:hover {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            border-color: #3498db;
+        }
+
+        .webelos .file-item a:hover {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            border-color: #e74c3c;
+        }
+
+        .file-icon {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .start-here {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%) !important;
+            color: white !important;
+            border-color: #f39c12 !important;
+            font-weight: bold;
+        }
+
+        .start-here:hover {
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%) !important;
+            transform: translateX(5px) scale(1.02);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .sections {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏕️ Pack 584 Meeting Resources</h1>
+            <p>October 11, 2025</p>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <p><strong>Welcome Leaders!</strong> This page contains all the materials and instructions for today's Pack Meeting. Both Pack and Webelos groups will have separate activities. Click on any file below to view the content.</p>
+            </div>
+
+            <div class="sections">
+                <!-- Pack Section -->
+                <div class="section pack">
+                    <h2>📘 Pack Activities</h2>
+                    <ul class="file-list">
+                        <li class="file-item">
+                            <a href="Pack/START-HERE.md" class="start-here">
+                                <span class="file-icon">⭐</span>
+                                <span>START HERE - Quick Overview</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Pack/00-Overall-Plan.md">
+                                <span class="file-icon">📋</span>
+                                <span>Overall Plan</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Pack/00-Complete-Prep-List.md">
+                                <span class="file-icon">✅</span>
+                                <span>Complete Prep List</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Pack/Full-Group-Activities-Instructions.md">
+                                <span class="file-icon">👥</span>
+                                <span>Full Group Activities</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Pack/Activity-Akela-Says-Instructions.md">
+                                <span class="file-icon">🎮</span>
+                                <span>Activity: Akela Says</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Pack/Activity-Jokes-Instructions.md">
+                                <span class="file-icon">😄</span>
+                                <span>Activity: Jokes</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Pack/Station-1-Magic-1089.md">
+                                <span class="file-icon">🎩</span>
+                                <span>Station 1: Magic 1089</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Pack/Station-2-Magic-Paper-Skit.md">
+                                <span class="file-icon">📄</span>
+                                <span>Station 2: Magic Paper Skit</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Pack/Station-3-Human-Knots.md">
+                                <span class="file-icon">🤝</span>
+                                <span>Station 3: Human Knots</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Webelos Section -->
+                <div class="section webelos">
+                    <h2>🔴 Webelos Activities</h2>
+                    <ul class="file-list">
+                        <li class="file-item">
+                            <a href="Webelos/START-HERE.md" class="start-here">
+                                <span class="file-icon">⭐</span>
+                                <span>START HERE - Quick Overview</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Webelos/00-Overall-Plan.md">
+                                <span class="file-icon">📋</span>
+                                <span>Overall Plan</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Webelos/00-Complete-Prep-List.md">
+                                <span class="file-icon">✅</span>
+                                <span>Complete Prep List</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Webelos/Full-Group-Activities-Instructions.md">
+                                <span class="file-icon">👥</span>
+                                <span>Full Group Activities</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Webelos/Scout-Oath-and-Law-Reference.md">
+                                <span class="file-icon">📖</span>
+                                <span>Scout Oath and Law Reference</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Webelos/Cub-Scout-Fundamentals-Reference.md">
+                                <span class="file-icon">📚</span>
+                                <span>Cub Scout Fundamentals Reference</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Webelos/Station-1-Scout-Law-Detective.md">
+                                <span class="file-icon">🔍</span>
+                                <span>Station 1: Scout Law Detective</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Webelos/Station-2-Teach-Fundamentals.md">
+                                <span class="file-icon">🎓</span>
+                                <span>Station 2: Teach Fundamentals</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Webelos/Station-3-Denner-Brainstorming.md">
+                                <span class="file-icon">💡</span>
+                                <span>Station 3: Denner Brainstorming</span>
+                            </a>
+                        </li>
+                        <li class="file-item">
+                            <a href="Webelos/Station-4-Silent-Line-Up.md">
+                                <span class="file-icon">🤫</span>
+                                <span>Station 4: Silent Line Up</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Pack 584 • October 11, 2025 • <a href="https://jpfeiffe.github.io/webelos.html">View Webelos Den Schedule</a></p>
+        </div>
+    </div>
+</body>
+</html>
