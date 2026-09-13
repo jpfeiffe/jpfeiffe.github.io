@@ -177,6 +177,8 @@
             border-left: 3px solid #f39c12;
         }
 
+        .print-only { display: none; }
+
         ol.agenda {
             columns: 2;
             column-gap: 30px;
@@ -343,7 +345,10 @@
 
         /* ---- Print: keep it compact and stop burning ink on gradients ---- */
         @media print {
-            @page { size: landscape; margin: 10mm; }
+            /* Portrait now that the wide schedule table is excluded */
+            @page { size: portrait; margin: 12mm; }
+
+            .print-only { display: block !important; }
 
             body {
                 background: white !important;
@@ -361,6 +366,10 @@
 
             /* Controls and the spinner are meaningless on paper */
             .controls, .btn, #loadingMessage { display: none !important; }
+
+            /* The schedule lives in the sheet and goes stale on paper - print
+               the reference content only, and point at the live page instead. */
+            .schedule-section { display: none !important; }
 
             /* Flatten decoration: gradients and shadows are set inline in places */
             [style*="linear-gradient"] { background: #fff !important; }
@@ -482,7 +491,7 @@
         </div>
 
         <!-- Schedule -->
-        <div style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #eceff1 0%, #cfd8dc 100%); border-radius: 10px; border-left: 5px solid #37474f;">
+        <div class="schedule-section" style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #eceff1 0%, #cfd8dc 100%); border-radius: 10px; border-left: 5px solid #37474f;">
             <h2 style="color: #263238; margin-top: 0; font-size: 1.8em;">&#128198; The Schedule</h2>
             <p style="color: #37474f; margin: 0 0 6px 0;">Every den meeting, pack meeting, campout and sign-up slot for 2026&ndash;27. This table is live &mdash; it reads the shared Google Sheet each time the page loads, so edits there show up here.</p>
             <p style="color: #37474f; margin: 0 0 18px 0;">Sign-up slots are the cells marked <span style="color: #ff0000; font-weight: bold;">&lt;Sign-Up!&gt;</span> &mdash; a planner, two helpers and snacks for each den meeting.</p>
@@ -523,6 +532,11 @@
             </div>
 
             <p style="color: #546e7a; margin: 16px 0 0 0; font-size: 0.92em;"><em>Dates assume the proposed Tuesday pattern. If the den picks a different night, they shift.</em></p>
+        </div>
+
+        <div class="print-only" style="margin-top: 16px; padding: 12px 16px; border: 1px solid #999; border-radius: 6px;">
+            <strong>&#128198; Schedule not included.</strong> Den meetings, campouts and sign-up slots live in the shared sheet and change often, so they are left off the printout.
+            See <strong>jpfeiffe.github.io/aols.html</strong> for the live schedule.
         </div>
 
         <!-- What's New -->
