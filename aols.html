@@ -103,6 +103,19 @@
             vertical-align: middle;
         }
 
+        .req-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            align-items: start;
+        }
+
+        @media (max-width: 760px) {
+            .req-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .track-tag {
             display: inline-block;
             background: #6a1b9a;
@@ -325,7 +338,7 @@
                     <span class="pairs-tag">STACKS</span> can be run alongside another adventure
                 </p>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px;">
+                <div class="req-grid">
 
                     <div class="adventure-card">
                         <h4><a href="https://www.scouting.org/cub-scout-adventures/bobcat-aol/" target="_blank" class="adv-link" style="color: #c0392b;">Bobcat</a></h4>
