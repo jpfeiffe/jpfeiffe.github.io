@@ -116,9 +116,15 @@
             grid-row: 1 / span 3;
         }
 
+        /* Keep the planning notes in the right column, below Personal Fitness */
+        .home-note {
+            grid-column: 2;
+        }
+
         @media (max-width: 860px) {
             .home-grid { grid-template-columns: 1fr; }
             .home-feature { grid-column: auto; grid-row: auto; }
+            .home-note { grid-column: auto; }
         }
 
         .req-grid {
@@ -545,15 +551,15 @@
                     <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #6a1b9a;">
                         <h4 style="color: #6a1b9a; margin-top: 0;">Personal Fitness 2 and 4 &mdash; in practice</h4>
                         <p style="color: #555; margin: 0 0 10px 0;"><strong>Requirement 2</strong> is a <strong>14-day activity log</strong> kept at home between meetings, then shared back with the patrol or family. <strong>Requirement 4</strong> is reviewing the Annual Health and Medical Record with a parent.</p>
-                        <p style="color: #555; margin: 0 0 14px 0;">Neither carries BSA&rsquo;s formal &ldquo;at home&rdquo; wording, so they are easy to overlook &mdash; but both land with families. <strong>Hand out the tracking sheet at least two weeks before</strong> you want Personal Fitness signed off.</p>
+                        <p style="color: #555; margin: 0;">Neither carries BSA&rsquo;s formal &ldquo;at home&rdquo; wording, so they are easy to overlook &mdash; but both land with families. <strong>Hand out the tracking sheet at least two weeks before</strong> you want Personal Fitness signed off.</p>
+                    </div>
 
-                        <div style="padding: 12px; background: #fdf2f2; border-radius: 6px; border-left: 3px solid #c0392b;">
-                            <strong style="color: #c0392b; font-size: 0.95em;">&#9888; Two planning notes:</strong>
-                            <ul style="color: #555; margin: 8px 0 0 0; padding-left: 20px; line-height: 1.6; font-size: 0.92em;">
-                                <li>First Aid is <em>not</em> a parent-homework adventure. Only requirement 1 is at home &mdash; the hurry cases, choking, shock, treating cuts and burns, and the personal first aid kit are all hands-on demonstrations that need den meeting time.</li>
-                                <li>Duty to God cannot go home <em>entirely</em>. Requirements 1 and 3 are family discussions, but <strong>requirement 2 &mdash; meeting a representative of a local faith-based organization &mdash; has to be arranged</strong>. If the den hands the whole adventure to families, that visit is the piece that quietly does not happen.</li>
-                            </ul>
-                        </div>
+                    <div class="home-note" style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #c0392b;">
+                        <strong style="color: #c0392b;">&#9888; Two planning notes:</strong>
+                        <ul style="color: #555; margin: 10px 0 0 0; padding-left: 20px; line-height: 1.6;">
+                            <li>First Aid is <em>not</em> a parent-homework adventure. Only requirement 1 is at home &mdash; the hurry cases, choking, shock, treating cuts and burns, and the personal first aid kit are all hands-on demonstrations that need den meeting time.</li>
+                            <li>Duty to God cannot go home <em>entirely</em>. Requirements 1 and 3 are family discussions, but <strong>requirement 2 &mdash; meeting a representative of a local faith-based organization &mdash; has to be arranged</strong>. If the den hands the whole adventure to families, that visit is the piece that quietly does not happen.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
