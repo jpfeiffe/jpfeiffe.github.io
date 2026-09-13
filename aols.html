@@ -321,6 +321,143 @@
             </div>
         </div>
 
+        <!-- Schedule -->
+        <div style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #eceff1 0%, #cfd8dc 100%); border-radius: 10px; border-left: 5px solid #37474f;">
+            <h2 style="color: #263238; margin-top: 0; font-size: 1.8em;">&#128198; The Schedule</h2>
+            <p style="color: #37474f; margin: 0 0 6px 0;">Every den meeting, pack meeting, campout and sign-up slot for 2026&ndash;27. This table is live &mdash; it reads the shared Google Sheet each time the page loads, so edits there show up here.</p>
+            <p style="color: #37474f; margin: 0 0 18px 0;">Sign-up slots are the cells marked <span style="color: #ff0000; font-weight: bold;">&lt;Sign-Up!&gt;</span> &mdash; a planner, two helpers and snacks for each den meeting.</p>
+
+            <div class="controls">
+                <button class="btn" onclick="window.open('https://docs.google.com/spreadsheets/d/1yzT9M7d0S1GKIOU1YtEI06s-Vxp9kNud8xcjEKhXnLQ/edit', '_blank')" title="Opens Google Sheets in a new tab">&#128197; Open &amp; Edit Schedule</button>
+                <button class="btn" onclick="loadFromGoogleSheet()" title="Re-read the sheet">&#128260; Refresh</button>
+            </div>
+
+            <div id="loadingMessage" style="text-align: center; padding: 40px; background: rgba(255,255,255,0.7); border-radius: 10px;">
+                <div style="display: inline-block; animation: spin 1s linear infinite; width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #37474f; border-radius: 50%; margin-bottom: 18px;"></div>
+                <p style="color: #546e7a; font-size: 1.05em; margin: 0;">Loading schedule from Google Sheets&hellip;</p>
+            </div>
+
+            <div id="scheduleContainer" style="display: none;">
+                <div class="table-container">
+                    <table id="scheduleTable">
+                        <thead>
+                            <tr>
+                                <th style="width: 60px;">#</th>
+                                <th class="date-col">Date</th>
+                                <th class="time-col">Start</th>
+                                <th class="time-col">End</th>
+                                <th class="event-title">Event Title</th>
+                                <th class="location-col">Location</th>
+                                <th class="adventure-col">Adventure</th>
+                                <th class="description-col">Description</th>
+                                <th class="description-col">Planner</th>
+                                <th class="description-col">Helper 1</th>
+                                <th class="description-col">Helper 2</th>
+                                <th class="description-col">Snacks</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scheduleTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <p style="color: #546e7a; margin: 16px 0 0 0; font-size: 0.92em;"><em>Dates assume the proposed Tuesday pattern. If the den picks a different night, they shift.</em></p>
+        </div>
+
+        <!-- Parent Meeting Agenda -->
+        <div style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%); border-radius: 10px; border-left: 5px solid #3f51b5;">
+            <h2 style="color: #283593; margin-top: 0; font-size: 1.8em;">&#128203; Parent Meeting &mdash; Agenda</h2>
+            <p style="color: #283593; margin-bottom: 22px;">What to get through. Detail on the adventures themselves is further down the page.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px;">
+
+                <div style="background: white; padding: 18px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #f39c12;">
+                    <h4 style="color: #b35c00; margin: 0 0 4px 0;">1. Meeting day and time <span style="background:#f39c12;color:#fff;font-size:0.62em;font-weight:700;padding:2px 8px;border-radius:9px;vertical-align:middle;">DECIDE</span></h4>
+                    <ul style="color: #555; margin: 8px 0 0 0; padding-left: 20px; line-height: 1.7;">
+                        <li>Proposed: Tuesdays 5:30&ndash;6:15, first and third</li>
+                        <li>Pack meeting follows at 6:30 on third Tuesdays</li>
+                        <li>Nothing is fixed &mdash; does that work for families?</li>
+                        <li>Standing conflicts: sports, music, siblings</li>
+                        <li><strong>Location still to be confirmed</strong></li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 18px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #c0392b;">
+                    <h4 style="color: #922b21; margin: 0 0 4px 0;">2. Find a troop <span style="background:#c0392b;color:#fff;font-size:0.62em;font-weight:700;padding:2px 8px;border-radius:9px;vertical-align:middle;">HEADLINE</span></h4>
+                    <ul style="color: #555; margin: 8px 0 0 0; padding-left: 20px; line-height: 1.7;">
+                        <li>Crossover is this year, January to March</li>
+                        <li>Troop visit is a rank requirement (Bobcat 7)</li>
+                        <li>Wants to happen in early fall</li>
+                        <li>Shop around &mdash; troops differ a lot</li>
+                        <li>Norm&rsquo;s two worksheets: one for Scouts, one for adults</li>
+                        <li><strong>From parents tonight:</strong> which weeknights work in Oct, Nov, Dec</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 18px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #2e7d32;">
+                    <h4 style="color: #1b5e20; margin: 0 0 4px 0;">3. October 3 den campout</h4>
+                    <ul style="color: #555; margin: 8px 0 0 0; padding-left: 20px; line-height: 1.7;">
+                        <li>Saturday evening through Sunday morning</li>
+                        <li><strong>BALOO-trained adult required</strong> &mdash; courses fill up, book now. Most likely thing to stop the trip</li>
+                        <li>Must be a <strong>patrol</strong> campout, not families on one site</li>
+                        <li>To decide: site, cost, who books, start time</li>
+                        <li>Tents and gear &mdash; who has what, who borrows</li>
+                        <li>Medical form parts A and B for every Scout</li>
+                        <li>Try to get the troop visit in <em>before</em> this</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 18px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #6a1b9a;">
+                    <h4 style="color: #4a148c; margin: 0 0 4px 0;">4. Things with a two-week fuse</h4>
+                    <ul style="color: #555; margin: 8px 0 0 0; padding-left: 20px; line-height: 1.7;">
+                        <li><strong>Personal Fitness 2</strong> &mdash; 14-day activity log, kept at home. Hand it out a fortnight early</li>
+                        <li><strong>10,000 for the Troops</strong> &mdash; optional, ships early November. <em>Confirm this year&rsquo;s date</em>, and note Citizenship needs two hours</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 18px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #ff9800;">
+                    <h4 style="color: #e65100; margin: 0 0 4px 0;">5. What goes home with families</h4>
+                    <ul style="color: #555; margin: 8px 0 0 0; padding-left: 20px; line-height: 1.7;">
+                        <li><em>A Parent&rsquo;s Guide</em> &mdash; Bobcat 8</li>
+                        <li>Protect Yourself Rules video &mdash; First Aid 1</li>
+                        <li><strong>Duty to God</strong> &mdash; usually done at home; parents may opt out of den delivery</li>
+                        <li>Medical record review &mdash; Personal Fitness 4</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 18px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #2196f3;">
+                    <h4 style="color: #0d47a1; margin: 0 0 4px 0;">6. Electives &mdash; pick two</h4>
+                    <ul style="color: #555; margin: 8px 0 0 0; padding-left: 20px; line-height: 1.7;">
+                        <li>Knife Safety penciled in at the campout</li>
+                        <li>Second goes to a Scout vote in October</li>
+                        <li>Zoo Snooze on Jan 22 would suit <strong>Into the Wild</strong></li>
+                        <li>Archery, BB Gun, Slingshot: <strong>council or district events only</strong></li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 18px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #c0392b;">
+                    <h4 style="color: #922b21; margin: 0 0 4px 0;">7. Blue &amp; Gold / crossover <span style="background:#f39c12;color:#fff;font-size:0.62em;font-weight:700;padding:2px 8px;border-radius:9px;vertical-align:middle;">CONFIRM</span></h4>
+                    <ul style="color: #555; margin: 8px 0 0 0; padding-left: 20px; line-height: 1.7;">
+                        <li><strong>Who plans it is unsettled</strong> &mdash; the schedule says pack, and many packs give it to the Webelos den. Ask the Cubmaster before assigning roles</li>
+                        <li>Date not confirmed; last year was mid-March, 10&ndash;12</li>
+                        <li>Joel on call March 8&ndash;14</li>
+                        <li>If it is ours: event lead, decor, food, troop liaison</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 18px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #607d8b;">
+                    <h4 style="color: #37474f; margin: 0 0 4px 0;">8. Housekeeping</h4>
+                    <ul style="color: #555; margin: 8px 0 0 0; padding-left: 20px; line-height: 1.7;">
+                        <li>Sign-ups: planner, two helpers, snacks &mdash; in the sheet above</li>
+                        <li>No Trail to Troop this weekend; not on the calendar</li>
+                        <li>Fall Family Camp is optional &mdash; the rank campout is Oct 3 instead</li>
+                        <li>Uniform: blues are fine. A Scouts BSA uniform is optional and carries over to the troop</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
         <!-- What's New -->
         <div style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #fdecea 0%, #f9d6d5 100%); border-radius: 10px; border-left: 5px solid #c0392b;">
             <h2 style="color: #922b21; margin-top: 0; font-size: 1.8em;">&#128680; What Changed &mdash; Read This First</h2>
@@ -361,191 +498,6 @@
                     <p style="color: #555; margin: 0;">At least one adult on a pack or Arrow of Light den campout must be <strong>BALOO-trained</strong>. And when camping with a Scouts BSA troop, Arrow of Light Scouts still <strong>follow Arrow of Light Cub Scout camping rules</strong> &mdash; troop rules do not apply to them.</p>
                 </div>
 
-            </div>
-        </div>
-
-        <!-- Parent Orientation -->
-        <div style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%); border-radius: 10px; border-left: 5px solid #3f51b5;">
-            <h2 style="color: #283593; margin-top: 0; font-size: 1.8em;">&#128203; Parent Orientation</h2>
-            <p style="color: #283593; margin-bottom: 24px;">What to cover at the first parent meeting &mdash; Pack 584 Arrow of Light den, 2026&ndash;27.</p>
-
-            <!-- Meeting logistics -->
-            <div style="background: white; padding: 22px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px; border-left: 5px solid #f39c12;">
-                <div style="display: inline-block; background: #f39c12; color: white; font-size: 0.75em; font-weight: 700; letter-spacing: 1.2px; padding: 4px 12px; border-radius: 11px; margin-bottom: 10px;">PROPOSED &mdash; TO DECIDE AT THE MEETING</div>
-                <h3 style="color: #283593; margin: 0 0 10px 0; font-size: 1.3em;">&#128197; Meeting logistics</h3>
-
-                <p style="color: #555; margin: 0 0 16px 0;">Nothing below is settled. It is <strong>one workable pattern</strong>, put up so there is something concrete to react to &mdash; <strong>parents need to say what actually works for their families</strong> before any of it is fixed.</p>
-
-                <h4 style="color: #283593; margin: 0 0 6px 0;">The proposal</h4>
-                <ul class="fact-list" style="margin-bottom: 16px;">
-                    <li><strong>Den meetings:</strong> Tuesdays, <strong>5:30&ndash;6:15 PM</strong>, every two weeks &mdash; the first and third Tuesday of each month.</li>
-                    <li><strong>Third Tuesdays the pack meeting follows at 6:30 PM</strong> in the same building, so those nights run den, a 15-minute gap, then pack.</li>
-                    <li><strong>Location:</strong> <span class="location-tbd">to be confirmed.</span></li>
-                </ul>
-
-                <div style="padding: 14px; background: #fff8e1; border-radius: 6px; border-left: 4px solid #f39c12; margin-bottom: 16px;">
-                    <p style="color: #7a5c00; margin: 0 0 8px 0;"><strong>Why Tuesday is on the table at all:</strong> the pack has moved its meetings to Tuesday evenings. Last year the den met Saturday mornings ahead of a Saturday pack meeting, and that option is gone with the pack&rsquo;s change. Pairing the den meeting with the pack meeting on third Tuesdays means one trip out rather than two.</p>
-                    <p style="color: #7a5c00; margin: 0;"><strong>But it is not the only option</strong> &mdash; a different weeknight, a different start time, or keeping a weekend slot are all open if that suits families better.</p>
-                </div>
-
-                <div style="padding: 14px; background: #ffebee; border-radius: 6px; border-left: 4px solid #c0392b;">
-                    <h4 style="color: #922b21; margin: 0 0 6px 0;">&#128221; What we need from parents</h4>
-                    <ul style="color: #555; margin: 0; padding-left: 20px; line-height: 1.7;">
-                        <li>Does <strong>5:30 PM on a weeknight</strong> work, given school pickup and dinner?</li>
-                        <li>Is <strong>Tuesday</strong> the right night, or does another weeknight clash less?</li>
-                        <li>On pack nights, is <strong>den plus pack back to back</strong> too long for a 5th grader, or is one trip better than two?</li>
-                        <li>Any <strong>standing conflicts</strong> &mdash; sports, music, other siblings&rsquo; activities?</li>
-                    </ul>
-                </div>
-
-                <p style="color: #666; margin: 16px 0 0 0; font-size: 0.92em;"><em>The schedule below is built on this proposal. If the den picks a different night or time, those dates shift with it &mdash; so it is worth settling early.</em></p>
-            </div>
-
-            <div style="background: white; padding: 18px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px;">
-                <p style="color: #555; margin: 0;"><strong>No Trail to Troop this weekend.</strong> It is not on this year&rsquo;s den calendar.</p>
-            </div>
-
-            <!-- Schedule -->
-            <div style="background: white; padding: 22px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px;">
-                <h3 style="color: #283593; margin: 0 0 8px 0; font-size: 1.3em;">&#128198; The full schedule</h3>
-                <p style="color: #555; margin: 0 0 6px 0;">Every den meeting, pack meeting, campout and sign-up slot. This table is live &mdash; it reads the shared Google Sheet each time the page loads, so edits there appear here.</p>
-                <p style="color: #555; margin: 0 0 18px 0;">Sign-up slots are the cells marked <span style="color: #ff0000; font-weight: bold;">&lt;Sign-Up!&gt;</span> &mdash; a planner, two helpers, and snacks for each den meeting.</p>
-
-                <div class="controls">
-                    <button class="btn" onclick="window.open('https://docs.google.com/spreadsheets/d/1yzT9M7d0S1GKIOU1YtEI06s-Vxp9kNud8xcjEKhXnLQ/edit', '_blank')" title="Opens Google Sheets in a new tab">&#128197; Open &amp; Edit Schedule</button>
-                    <button class="btn" onclick="loadFromGoogleSheet()" title="Re-read the sheet">&#128260; Refresh</button>
-                </div>
-
-                <div id="loadingMessage" style="text-align: center; padding: 40px; background: #f8f9fa; border-radius: 10px;">
-                    <div style="display: inline-block; animation: spin 1s linear infinite; width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #3f51b5; border-radius: 50%; margin-bottom: 18px;"></div>
-                    <p style="color: #6c757d; font-size: 1.05em; margin: 0;">Loading schedule from Google Sheets&hellip;</p>
-                </div>
-
-                <div id="scheduleContainer" style="display: none;">
-                    <div class="table-container">
-                        <table id="scheduleTable">
-                            <thead>
-                                <tr>
-                                    <th style="width: 60px;">#</th>
-                                    <th class="date-col">Date</th>
-                                    <th class="time-col">Start</th>
-                                    <th class="time-col">End</th>
-                                    <th class="event-title">Event Title</th>
-                                    <th class="location-col">Location</th>
-                                    <th class="adventure-col">Adventure</th>
-                                    <th class="description-col">Description</th>
-                                    <th class="description-col">Planner</th>
-                                    <th class="description-col">Helper 1</th>
-                                    <th class="description-col">Helper 2</th>
-                                    <th class="description-col">Snacks</th>
-                                </tr>
-                            </thead>
-                            <tbody id="scheduleTableBody"></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Oct 3 campout -->
-            <div style="background: white; padding: 22px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px; border-left: 5px solid #2e7d32;">
-                <h3 style="color: #1b5e20; margin: 0 0 8px 0; font-size: 1.3em;">&#9968; October 3 den campout &mdash; the big one</h3>
-                <p style="color: #555; margin: 0 0 16px 0;">Outdoor Adventurer is the anchor of the rank, and several other requirements hang off it. The den campout runs <strong>Saturday evening, October 3, through Sunday morning</strong>. Most of the planning has to start now.</p>
-
-                <div style="padding: 14px; background: #ffebee; border-radius: 6px; border-left: 4px solid #c0392b; margin-bottom: 16px;">
-                    <h4 style="color: #922b21; margin: 0 0 6px 0;">&#9888;&#65039; BALOO &mdash; book it now</h4>
-                    <p style="color: #555; margin: 0 0 8px 0;">At least one adult on an Arrow of Light den campout must be <strong>BALOO-trained</strong>. If nobody in the den holds it, a course has to be booked &mdash; and they fill up. <strong>This is the single thing most likely to stop the campout from happening.</strong></p>
-                    <p style="color: #555; margin: 0;">Note also: Arrow of Light Scouts follow Arrow of Light Cub Scout camping rules <em>even when camping with a Scouts BSA troop</em>. Troop rules do not apply to them.</p>
-                </div>
-
-                <div style="padding: 14px; background: #fff8e1; border-radius: 6px; border-left: 4px solid #f39c12; margin-bottom: 16px;">
-                    <h4 style="color: #7a5c00; margin: 0 0 6px 0;">It has to be a patrol campout</h4>
-                    <p style="color: #555; margin: 0;">Outdoor Adventurer 5 is to camp <strong>with your patrol</strong> or with a Scouts BSA troop. Families camping at adjacent sites does not satisfy it unless the Scouts camp <em>as a patrol</em> &mdash; pitching, cooking and running the site together. Worth settling with parents before anything gets booked.</p>
-                </div>
-
-                <h4 style="color: #1b5e20; margin: 0 0 8px 0;">Still to decide</h4>
-                <ul class="fact-list" style="margin-bottom: 16px;">
-                    <li>Site, cost, and who books it</li>
-                    <li>Start time &mdash; the schedule says 4:00 PM as a placeholder; the Scouts need daylight to cook</li>
-                    <li>Tents and gear &mdash; who has what, who needs to borrow</li>
-                    <li><strong>Annual Health and Medical Record</strong>, parts A and B, for every Scout. Reviewing it with a parent also satisfies <strong>Personal Fitness 4</strong>, so it does double duty.</li>
-                </ul>
-
-                <div style="padding: 14px; background: #e0f2f1; border-radius: 6px; border-left: 4px solid #00897b;">
-                    <h4 style="color: #00695c; margin: 0 0 6px 0;">&#128279; What the campout can carry</h4>
-                    <p style="color: #555; margin: 0 0 8px 0;">Beyond Outdoor Adventurer 5&ndash;8, the trip can also cover <strong>Personal Fitness 1</strong> (cook a camp meal &mdash; same kitchen as Outdoor Adventurer 7), <strong>First Aid 2&ndash;7</strong> (hands-on skills with a qualified instructor), <strong>Personal Fitness 3</strong> (30 active minutes &mdash; a hike from camp), and <strong>Citizenship 2</strong> (a conservation project on site).</p>
-                    <p style="color: #666; margin: 0; font-size: 0.9em;"><em>Full detail in the Outdoor Adventurer section below.</em></p>
-                </div>
-            </div>
-
-            <!-- Troop visit -->
-            <div style="background: white; padding: 22px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px; border-left: 5px solid #00897b;">
-                <h3 style="color: #00695c; margin: 0 0 8px 0; font-size: 1.3em;">&#129309; The troop visit</h3>
-                <p style="color: #555; margin: 0 0 12px 0;"><strong>Bobcat requirement 7</strong> &mdash; visit a Scouts BSA troop, with the patrol or with a parent. One visit satisfies the rank. Scouting America wants it in the <strong>early fall</strong>, at the start of the program year. It can be met three ways: a troop daytime activity, a troop meeting scavenger hunt during a visit, or a troop overnight.</p>
-
-                <div style="padding: 14px; background: #e0f2f1; border-radius: 6px; border-left: 4px solid #00897b; margin-bottom: 16px;">
-                    <p style="color: #555; margin: 0;"><strong>A troop visit before October 3 is worth arranging.</strong> One night at a troop meeting can also carry <strong>Outdoor Adventurer 1&ndash;4</strong> &mdash; Scout Basic Essentials, the gear shakedown, the SAFE Checklist, and finding the campsite on a map &mdash; taught by Scouts who camp every month. That is the required Bobcat visit plus half of Outdoor Adventurer in one evening.</p>
-                </div>
-
-                <div style="padding: 14px; background: #fff3e0; border-radius: 6px; border-left: 4px solid #ff9800; margin-bottom: 16px;">
-                    <p style="color: #bf360c; margin: 0;"><strong>&#128221; What parents need to supply tonight:</strong> which weeknights work for them in October, November and December.</p>
-                </div>
-
-                <h4 style="color: #00695c; margin: 0 0 6px 0;">Norm&rsquo;s troop-selection materials</h4>
-                <p style="color: #555; margin: 0;">Norm sent two worksheets &mdash; one for the Scouts to fill in, one for the adults. His intent is that the Scouts think about what they want from a troop rather than follow their friends.</p>
-            </div>
-
-            <!-- Two-week fuses -->
-            <div style="background: white; padding: 22px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px; border-left: 5px solid #6a1b9a;">
-                <h3 style="color: #4a148c; margin: 0 0 8px 0; font-size: 1.3em;">&#9200; Two-week fuses</h3>
-                <p style="color: #555; margin: 0 0 16px 0;">Things that have to start well before the meeting where they get signed off.</p>
-
-                <h4 style="color: #4a148c; margin: 0 0 6px 0;">Personal Fitness &mdash; the 14-day log</h4>
-                <p style="color: #555; margin: 0 0 16px 0;"><strong>Requirement 2</strong> is a 14-day activity log kept at home between meetings, then shared back with the patrol or family. It carries no formal &ldquo;at home&rdquo; label, so it is easy to overlook &mdash; but it lands entirely with families. The tracking sheet goes out <strong>at least two weeks before</strong> the den wants the adventure finished. This is the requirement most likely to be the last thing outstanding in February.</p>
-
-                <h4 style="color: #4a148c; margin: 0 0 6px 0;">10,000 for the Troops &mdash; optional, dated</h4>
-                <p style="color: #555; margin: 0 0 10px 0;">A Scouting America national campaign that BSA designates as an official way to satisfy the service project in the citizenship adventures. Scouts make holiday cards at a meeting; the leader ships them in one package to the National Service Center.</p>
-                <p style="color: #555; margin: 0;">Two things to know before building a meeting around it: the ship deadline is early November and <strong>this year&rsquo;s exact date should be confirmed</strong> before it goes on the calendar, and Citizenship 2 asks for <strong>two hours</strong> of service &mdash; so card-making likely needs pairing with something else. A service project alongside a Scouts BSA troop is another listed option for the same requirement.</p>
-            </div>
-
-            <!-- Blue & Gold -->
-            <div style="background: white; padding: 22px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px; border-left: 5px solid #c0392b;">
-                <div style="display: inline-block; background: #f39c12; color: white; font-size: 0.75em; font-weight: 700; letter-spacing: 1.2px; padding: 4px 12px; border-radius: 11px; margin-bottom: 10px;">WHO RUNS IT &mdash; CONFIRM WITH THE CUBMASTER</div>
-                <h3 style="color: #922b21; margin: 0 0 10px 0; font-size: 1.3em;">&#127894; Blue &amp; Gold and crossover</h3>
-
-                <p style="color: #555; margin: 0 0 12px 0;">Crossover is where the Arrow of Light rank is presented and the Scouts bridge to their troops. It closes the den. Last year it ran <strong>combined with Blue &amp; Gold on a Saturday in mid-March, 10:00&ndash;12:00, at First Lutheran Church of Bothell</strong>.</p>
-
-                <div style="padding: 14px; background: #fff8e1; border-radius: 6px; border-left: 4px solid #f39c12; margin-bottom: 16px;">
-                    <h4 style="color: #7a5c00; margin: 0 0 6px 0;">Who plans it is an open question</h4>
-                    <p style="color: #555; margin: 0 0 8px 0;">The den schedule currently lists the planner for this event as <strong>&ldquo;Sign-Up (pack)&rdquo;</strong> &mdash; a pack responsibility, not the Arrow of Light den&rsquo;s.</p>
-                    <p style="color: #555; margin: 0 0 8px 0;">Many packs deliberately have the <strong>Webelos den plan Blue &amp; Gold</strong>, precisely because the Arrow of Light den are the ones being honoured &mdash; you do not ask the Scouts crossing over to run their own bridging ceremony. Other packs hand it to the Arrow of Light den as a final service project.</p>
-                    <p style="color: #555; margin: 0;">This is <strong>pack-local tradition, not a BSA rule</strong>, so there is no authority to look it up in. <strong>Worth confirming with the Cubmaster before any parent is asked to take a role.</strong></p>
-                </div>
-
-                <p style="color: #555; margin: 0 0 10px 0;"><strong>If it does land with this den</strong>, it is the largest parent ask of the year, and it is much kinder to name it in September than in January. Roles worth claiming early:</p>
-                <ul class="fact-list" style="margin-bottom: 16px;">
-                    <li>Event lead</li>
-                    <li>Decor</li>
-                    <li>Food coordinator</li>
-                    <li>Troop liaison &mdash; inviting representatives from the receiving troops</li>
-                </ul>
-
-                <div style="padding: 14px; background: #ffebee; border-radius: 6px; border-left: 4px solid #c0392b;">
-                    <p style="color: #922b21; margin: 0;"><strong>&#128197; The date is not confirmed</strong>, and one constraint is already known: the schedule notes Joel is primary on call <strong>March 8&ndash;14</strong>. If crossover lands in that window, someone else has to lead it. Worth pinning the date down early.</p>
-                </div>
-            </div>
-
-            <!-- Electives decisions -->
-            <div style="background: white; padding: 22px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 5px solid #2196f3;">
-                <h3 style="color: #0d47a1; margin: 0 0 8px 0; font-size: 1.3em;">&#11088; Electives &mdash; the den&rsquo;s two</h3>
-                <p style="color: #555; margin: 0 0 16px 0;">The den picks <strong>two</strong> electives from sixteen. <strong>Knife Safety</strong> is penciled in at the campout; the second goes to a Scout vote in October.</p>
-
-                <div style="padding: 14px; background: #e3f2fd; border-radius: 6px; border-left: 4px solid #2196f3; margin-bottom: 14px;">
-                    <p style="color: #555; margin: 0;"><strong>Zoo Snooze on January 22</strong> is a natural fit for <strong>Into the Wild</strong> &mdash; visit a place with a variety of wild animals, observe one, and learn its ecosystem and how it coexists with other species. If the den wants to use it, the vote should account for it.</p>
-                </div>
-
-                <div style="padding: 14px; background: #fff8e1; border-radius: 6px; border-left: 4px solid #f39c12;">
-                    <p style="color: #7a5c00; margin: 0;"><strong>&#127919; Archery, BB Gun and Slingshot cannot be done as a den or pack activity.</strong> They count toward the two electives, but only at a district or council event under a certified rangemaster. If a Scout has their heart set on one, someone has to register for an event.</p>
-                </div>
             </div>
         </div>
 
