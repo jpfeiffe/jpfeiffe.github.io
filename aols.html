@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow of Light Adventures</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .card p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .adventure-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #c0392b;
+        }
+
+        .adventure-card h4 {
+            margin: 0 0 12px 0;
+            font-size: 1.15em;
+        }
+
+        .adventure-card ol {
+            color: #555;
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        .adventure-card li {
+            margin-bottom: 6px;
+        }
+
+        .at-home-tag {
+            display: inline-block;
+            background: #ff9800;
+            color: white;
+            font-size: 0.75em;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
+        .elective-card {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .council-only {
+            border-left: 3px solid #f39c12;
+        }
+
+        a.adv-link {
+            text-decoration: none;
+        }
+
+        a.adv-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>&#127993; Arrow of Light Adventures</h1>
+            <p class="subtitle">Rank overview &mdash; 5th grade Arrow of Light den</p>
+        </div>
+
+        <div class="summary-cards">
+            <div class="card">
+                <h3>6</h3>
+                <p>Required Adventures</p>
+            </div>
+            <div class="card">
+                <h3>2</h3>
+                <p>Electives (choose from 16)</p>
+            </div>
+            <div class="card">
+                <h3>2</h3>
+                <p>Requirements done at home</p>
+            </div>
+        </div>
+
+        <!-- Adventures -->
+        <div style="margin-top: 40px; padding: 25px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 10px; border-left: 5px solid #6c757d;">
+            <h2 style="color: #495057; margin-top: 0; font-size: 1.8em;">&#127942; Arrow of Light Adventures</h2>
+            <p style="color: #6c757d; margin-bottom: 25px;">Complete adventure guide and requirements overview. To earn the rank: <strong>all six required adventures plus any two electives</strong>. <a href="https://www.scouting.org/programs/cub-scouts/adventures/arrow-of-light/" target="_blank" class="adv-link" style="color: #495057; font-weight: 500;">Official Scouting America Arrow of Light Adventures &rarr;</a></p>
+
+            <!-- At-Home Requirements -->
+            <div style="margin-bottom: 30px; padding: 20px; background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-radius: 8px; border-left: 4px solid #ff9800;">
+                <h3 style="color: #e65100; margin-top: 0; font-size: 1.4em;">&#128218; The Two At-Home Requirements</h3>
+                <p style="color: #bf360c; margin-bottom: 20px; font-style: italic;">Unlike Webelos, Arrow of Light hands no whole adventure to the family. Exactly two <em>requirements</em> are designated to be done at home with a parent or guardian:</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #ff9800;">
+                        <h4 style="color: #e65100; margin-top: 0;">Bobcat, requirement 8</h4>
+                        <p style="color: #555; margin: 0;">With a parent or guardian, work through the exercises in <em>A Parent&rsquo;s Guide</em>.</p>
+                    </div>
+
+                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #ff9800;">
+                        <h4 style="color: #e65100; margin-top: 0;">First Aid, requirement 1</h4>
+                        <p style="color: #555; margin: 0;">With your parent or guardian&rsquo;s permission, watch the Protect Yourself Rules video for Arrow of Light.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.75); border-radius: 6px; border-left: 3px solid #c0392b;">
+                    <strong style="color: #c0392b;">&#9888; Planning note:</strong>
+                    <span style="color: #555;">First Aid is <em>not</em> a parent-homework adventure. Only requirement 1 is at home &mdash; the hurry cases, choking, shock, treating cuts and burns, and the personal first aid kit are all hands-on demonstrations that need den meeting time. Duty to God is likewise a den-supportable adventure built on family discussion, not an adventure handed to the family outright.</span>
+                </div>
+            </div>
+
+            <!-- Required Adventures -->
+            <div style="margin-bottom: 30px; padding: 20px; background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%); border-radius: 8px; border-left: 4px solid #4caf50;">
+                <h3 style="color: #2e7d32; margin-top: 0; font-size: 1.4em;">&#127957; Required Adventures (all six)</h3>
+                <p style="color: #1b5e20; margin-bottom: 20px; font-style: italic;">Every Arrow of Light Scout completes all six. Requirements below are paraphrased &mdash; follow the official text when signing off.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px;">
+
+                    <div class="adventure-card">
+                        <h4><a href="https://www.scouting.org/cub-scout-adventures/bobcat-aol/" target="_blank" class="adv-link" style="color: #c0392b;">Bobcat</a></h4>
+                        <ol>
+                            <li>Form a patrol: pick a name, elect a patrol leader, and discuss why the patrol method works.</li>
+                            <li>Get to know the members of your patrol.</li>
+                            <li>Recite the Scout Oath and Scout Law with your patrol.</li>
+                            <li>Build a patrol code of conduct.</li>
+                            <li>Demonstrate the Scouts BSA sign, salute, and handshake, and explain when each is used.</li>
+                            <li>Learn the Scouts BSA motto and slogan.</li>
+                            <li>Visit a Scouts BSA troop &mdash; with your patrol or with a parent or guardian.</li>
+                            <li><span class="at-home-tag">AT HOME</span>Work through <em>A Parent&rsquo;s Guide</em> with a parent or guardian.</li>
+                        </ol>
+                    </div>
+
+                    <div class="adventure-card">
+                        <h4><a href="https://www.scouting.org/cub-scout-adventures/citizenship/" target="_blank" class="adv-link" style="color: #c0392b;">Citizenship</a></h4>
+                        <ol>
+                            <li>Pick a service project your patrol or pack could do, and plan it using the BSA SAFE Checklist.</li>
+                            <li>Serve at least two hours total. Time may be split across more than one project.</li>
+                        </ol>
+                    </div>
+
+                    <div class="adventure-card">
+                        <h4><a href="https://www.scouting.org/cub-scout-adventures/duty-to-god/" target="_blank" class="adv-link" style="color: #c0392b;">Duty to God</a></h4>
+                        <p style="color: #666; font-size: 0.9em; margin: -4px 0 10px 0;"><em>Or substitute an appropriate religious emblem.</em></p>
+                        <ol>
+                            <li>Discuss your family&rsquo;s faith traditions with a parent or guardian. Pick a value tied to the Scout Law and discuss how your family lives it.</li>
+                            <li>Meet someone from a local faith-based organization that serves people in crisis regardless of their faith. Learn who they help and how.</li>
+                            <li>Discuss what Duty to God means to you and how you practice it daily.</li>
+                        </ol>
+                    </div>
+
+                    <div class="adventure-card">
+                        <h4><a href="https://www.scouting.org/cub-scout-adventures/first-aid/" target="_blank" class="adv-link" style="color: #c0392b;">First Aid</a></h4>
+                        <ol>
+                            <li><span class="at-home-tag">AT HOME</span>With parent or guardian permission, watch the Protect Yourself Rules video for Arrow of Light.</li>
+                            <li>Explain what to do when you find someone who needs first aid.</li>
+                            <li>Demonstrate the hurry cases: serious bleeding, heart attack or cardiac arrest, stopped breathing, stroke, and poisoning.</li>
+                            <li>Demonstrate how to help a choking victim.</li>
+                            <li>Demonstrate how to treat shock.</li>
+                            <li>Demonstrate how to treat cuts and scratches, burns and scalds, bites and stings, and a nosebleed.</li>
+                            <li>Build a personal first aid kit and show the use of each item.</li>
+                        </ol>
+                    </div>
+
+                    <div class="adventure-card">
+                        <h4><a href="https://www.scouting.org/cub-scout-adventures/outdoor-adventurer/" target="_blank" class="adv-link" style="color: #c0392b;">Outdoor Adventurer</a></h4>
+                        <ol>
+                            <li>Learn the Scout Basic Essentials.</li>
+                            <li>Decide what to bring on an overnight &mdash; tent, sleeping gear &mdash; and how to carry it.</li>
+                            <li>Review the four points of the SAFE Checklist and how they apply on the campout.</li>
+                            <li>Find the campsite on a map.</li>
+                            <li>Camp with your patrol or with a Scouts BSA troop.</li>
+                            <li>On arrival, lay out the site &mdash; kitchen, eating area, tents, firepit &mdash; and set up patrol gear before your own tent.</li>
+                            <li>Explain food safety and a sanitary kitchen, and demonstrate it at camp.</li>
+                            <li>Afterward, debrief with your patrol: what worked, what you would change, and how you followed the Outdoor Code and Leave No Trace.</li>
+                        </ol>
+                        <div style="margin-top: 12px; padding: 10px; background: #fff8e1; border-radius: 4px; border-left: 3px solid #f39c12;">
+                            <small style="color: #7a5c00;"><strong>Note on requirement 5:</strong> the campout must be with the <em>patrol</em> or a Scouts BSA troop. Families camping on the same site does not satisfy it unless the Arrow of Light Scouts camp as a patrol.</small>
+                        </div>
+                    </div>
+
+                    <div class="adventure-card">
+                        <h4><a href="https://www.scouting.org/cub-scout-adventures/personal-fitness/" target="_blank" class="adv-link" style="color: #c0392b;">Personal Fitness</a></h4>
+                        <ol>
+                            <li>Plan a balanced camping meal and cook it using camp gear.</li>
+                            <li>Track activity sessions of 30 minutes or more over 14 days. Share with your patrol or family whether you are living up to &ldquo;physically fit.&rdquo;</li>
+                            <li>Be active for 30 minutes with your patrol, a younger den, or one other person &mdash; include stretching and moving.</li>
+                            <li>Review the BSA Annual Health and Medical Record with a parent or guardian and discuss your participation.</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Elective Adventures -->
+            <div style="padding: 20px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 8px; border-left: 4px solid #2196f3;">
+                <h3 style="color: #0d47a1; margin-top: 0; font-size: 1.4em;">&#11088; Elective Adventures</h3>
+                <p style="color: #1565c0; margin-bottom: 20px; font-style: italic;">Choose any two of the sixteen. Arrow of Light no longer shares electives with Webelos &mdash; this list is specific to the rank.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                    <div class="elective-card">
+                        <strong><a href="https://www.scouting.org/cub-scout-adventures/champions-for-nature-aol/" target="_blank" class="adv-link" style="color: #27ae60;">Champions for Nature</a></strong><br>
+                        <small style="color: #666;">Conservation service and protecting wildlife</small>
+                    </div>
+                    <div class="elective-card">
+                        <strong><a href="https://www.scouting.org/cub-scout-adventures/cycling/" target="_blank" class="adv-link" style="color: #27ae60;">Cycling</a></strong><br>
+                        <small style="color: #666;">Bike safety, maintenance, and riding</small>
+                    </div>
+                    <div class="elective-card">
+                        <strong><a href="https://www.scouting.org/cub-scout-adventures/engineer/" target="_blank" class="adv-link" style="color: #27ae60;">Engineer</a></strong><br>
+                        <small style="color: #666;">Engineering design and building</small>
+                    </div>
+                    <div class="elective-card">
+                        <strong><a href="https://www.scouting.org/cub-scout-adventures/estimations/" target="_blank" class="adv-link" style="color: #27ae60;">Estimations</a></strong><br>
+                        <small style="color: #666;">Measuring and estimating in the field</small>
+                    </div>
+                    <div class="elective-card">
+                        <strong><a href="https://www.scouting.org/cub-scout-adventures/fishing/" target="_blank" class="adv-link" style="color: #27ae60;">Fishing</a></strong><br>
+                        <small style="color: #666;">Tackle, knots, and catching fish</small>
+                    </div>
+                    <div class="elective-card">
+                        <strong><a href="https://www.scouting.org/cub-scout-adventures/high-tech-outdoors/" target="_blank" class="adv-link" style="color: #27ae60;">High Tech Outdoors</a></strong><br>
+                        <small style="color: #666;">GPS, geocaching, and tech on the trail</small>
+                    </div>
+                    <div class="elective-card">
+                        <strong><a href="https://www.scouting.org/cub-scout-adventures/into-the-wild/" target="_blank" class="adv-link" style="color: #27ae60;">Into the Wild</a></strong><br>
+                        <small style="color: #666;">Wildlife identification and habitats</small>
+                    </div>
+                    <div class="elective-card">
+                        <strong><a href="https://www.scouting.org/cub-scout-adventures/into-the-woods/" target="_blank" class="adv-link" style="color: #27ae60;">Into the Woods</a></strong><br>
+                        <small style="color: #666;">Trees, forests, and forest health</small>
+                    </div>
+                    <div class="elective-card">
+                        <strong><a href="https://www.scouting.org/cub-scout-adventures/knife-safety/" target="_blank" class="adv-link" style="color: #27ae60;">Knife Safety</a></strong><br>
+                        <small style="color: #666;">Safe handling, care, and the Whittling Chip</small>
+                    </div>
+                    <div class="elective-card">
+                        <strong><a href="https://www.scouting.org/cub-scout-adventures/paddle-craft/" target="_blank" class="adv-link" style="color: #27ae60;">Paddle Craft</a></strong><br>
+                        <small style="color: #666;">Canoeing, kayaking, and water safety</small>
+                    </div>
+                    <div class="elective-card">
+                        <strong><a href="https://www.scouting.org/cub-scout-adventures/race-time-aol/" target="_blank" class="adv-link" style="color: #27ae60;">Race Time</a></strong><br>
+                        <small style="color: #666;">Pinewood derby and raingutter regatta</small>
+                    </div>
+                    <div class="elective-card">
+                        <strong><a href="https://www.scouting.org/cub-scout-adventures/summertime-fun-aol/" target="_blank" class="adv-link" style="color: #27ae60;">Summertime Fun</a></strong><br>
+                        <small style="color: #666;">Pack activities across the summer months</small>
+                    </div>
+                    <div class="elective-card">
+                        <strong><a href="https://www.scouting.org/cub-scout-adventures/swimming/" target="_blank" class="adv-link" style="color: #27ae60;">Swimming</a></strong><br>
+                        <small style="color: #666;">Swimming skills and safe swim practices</small>
+                    </div>
+                </div>
+
+                <div style="margin-top: 25px; padding: 18px; background: rgba(255,255,255,0.8); border-radius: 8px; border-left: 4px solid #f39c12;">
+                    <h4 style="color: #b35c00; margin: 0 0 6px 0; font-size: 1.1em;">&#127919; Range and Target Electives</h4>
+                    <p style="color: #7a5c00; margin: 0 0 15px 0; font-size: 0.92em;">These three count toward the two electives, but <strong>cannot be completed as a den or pack activity</strong>. They must be done at a district or council event under a certified rangemaster. <a href="https://www.scouting.org/outdoor-programs/range-activities/cub-scout-shooting-sports/" target="_blank" class="adv-link" style="color: #b35c00; font-weight: 500;">Cub Scout Shooting Sports &rarr;</a></p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
+                        <div class="elective-card council-only">
+                            <strong style="color: #f39c12;">Archery</strong><br>
+                            <small style="color: #666;">District or council event only</small>
+                        </div>
+                        <div class="elective-card council-only">
+                            <strong style="color: #f39c12;">BB Gun</strong><br>
+                            <small style="color: #666;">District or council event only</small>
+                        </div>
+                        <div class="elective-card council-only">
+                            <strong style="color: #f39c12;">Slingshot</strong><br>
+                            <small style="color: #666;">District or council event only</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
