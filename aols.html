@@ -110,21 +110,23 @@
             align-items: start;
         }
 
-        /* Duty to God is the long one: give it its own full-height column */
+        /* Duty to God is the long one and gets the left column to itself.
+           The right column is a flex stack, not grid rows - grid rows would
+           spread Duty to God's height across them and leave gaps under each card. */
         .home-feature {
             grid-column: 1;
-            grid-row: 1 / span 3;
         }
 
-        /* Keep the planning notes in the right column, below Personal Fitness */
-        .home-note {
+        .home-col {
             grid-column: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
         @media (max-width: 860px) {
             .home-grid { grid-template-columns: 1fr; }
-            .home-feature { grid-column: auto; grid-row: auto; }
-            .home-note { grid-column: auto; }
+            .home-feature, .home-col { grid-column: auto; }
         }
 
         .req-grid {
@@ -521,16 +523,6 @@
                 <p style="color: #bf360c; margin-bottom: 20px; font-style: italic;">Two <em>requirements</em> carry explicit &ldquo;at home&rdquo; wording, one whole <em>adventure</em> &mdash; Duty to God &mdash; is the family-delivered one, and two more quietly land at home without being labelled that way:</p>
 
                 <div class="home-grid">
-                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #ff9800;">
-                        <h4 style="color: #e65100; margin-top: 0;">Bobcat, requirement 8</h4>
-                        <p style="color: #555; margin: 0;">With a parent or guardian, work through the exercises in <em>A Parent&rsquo;s Guide</em>.</p>
-                    </div>
-
-                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #ff9800;">
-                        <h4 style="color: #e65100; margin-top: 0;">First Aid, requirement 1</h4>
-                        <p style="color: #555; margin: 0;">With your parent or guardian&rsquo;s permission, watch the Protect Yourself Rules video for Arrow of Light.</p>
-                    </div>
-
                     <div class="home-feature" style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #ff9800;">
                         <h4 style="color: #e65100; margin-top: 0;">Duty to God &mdash; the whole adventure</h4>
                         <p style="color: #555; margin: 0 0 10px 0;">Scouting America: <em>&ldquo;This Adventure is commonly done at home with the Cub Scout&rsquo;s family. If it is being done as a den, ensure that every parent and guardian is aware of the content and the activities that the den will do and allow parents to opt out of doing it as a den activity and choose to complete the requirement at home.&rdquo;</em></p>
@@ -548,6 +540,17 @@
                         </div>
                     </div>
 
+                    <div class="home-col">
+                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #ff9800;">
+                        <h4 style="color: #e65100; margin-top: 0;">Bobcat, requirement 8</h4>
+                        <p style="color: #555; margin: 0;">With a parent or guardian, work through the exercises in <em>A Parent&rsquo;s Guide</em>.</p>
+                    </div>
+
+                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #ff9800;">
+                        <h4 style="color: #e65100; margin-top: 0;">First Aid, requirement 1</h4>
+                        <p style="color: #555; margin: 0;">With your parent or guardian&rsquo;s permission, watch the Protect Yourself Rules video for Arrow of Light.</p>
+                    </div>
+
                     <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #6a1b9a;">
                         <h4 style="color: #6a1b9a; margin-top: 0;">Personal Fitness 2 and 4 &mdash; in practice</h4>
                         <p style="color: #555; margin: 0 0 10px 0;"><strong>Requirement 2</strong> is a <strong>14-day activity log</strong> kept at home between meetings, then shared back with the patrol or family. <strong>Requirement 4</strong> is reviewing the Annual Health and Medical Record with a parent.</p>
@@ -560,6 +563,7 @@
                             <li>First Aid is <em>not</em> a parent-homework adventure. Only requirement 1 is at home &mdash; the hurry cases, choking, shock, treating cuts and burns, and the personal first aid kit are all hands-on demonstrations that need den meeting time.</li>
                             <li>Duty to God cannot go home <em>entirely</em>. Requirements 1 and 3 are family discussions, but <strong>requirement 2 &mdash; meeting a representative of a local faith-based organization &mdash; has to be arranged</strong>. If the den hands the whole adventure to families, that visit is the piece that quietly does not happen.</li>
                         </ul>
+                    </div>
                     </div>
                 </div>
             </div>
