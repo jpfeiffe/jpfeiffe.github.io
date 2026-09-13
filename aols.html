@@ -340,6 +340,102 @@
         a.adv-link:hover {
             text-decoration: underline;
         }
+
+        /* ---- Print: keep it compact and stop burning ink on gradients ---- */
+        @media print {
+            @page { size: landscape; margin: 10mm; }
+
+            body {
+                background: white !important;
+                padding: 0;
+                font-size: 9.5pt;
+                color: #000;
+            }
+
+            .container {
+                box-shadow: none !important;
+                border-radius: 0;
+                padding: 0;
+                max-width: none;
+            }
+
+            /* Controls and the spinner are meaningless on paper */
+            .controls, .btn, #loadingMessage { display: none !important; }
+
+            /* Flatten decoration: gradients and shadows are set inline in places */
+            [style*="linear-gradient"] { background: #fff !important; }
+            [style*="box-shadow"], .adventure-card, .elective-card, .table-container {
+                box-shadow: none !important;
+            }
+
+            .card {
+                background: #eee !important;
+                color: #000 !important;
+                border: 1px solid #999;
+                padding: 10px;
+            }
+            .card h3 { font-size: 1.3em; }
+
+            /* Tighten the section wrappers, which carry generous screen padding */
+            .container > div { padding: 12px !important; margin-top: 14px !important; }
+
+            h1 { font-size: 18pt; margin-bottom: 4px; }
+            h2 { font-size: 13pt; page-break-after: avoid; margin-bottom: 6px; }
+            h3 { font-size: 11pt; page-break-after: avoid; }
+            h4 { font-size: 10pt; page-break-after: avoid; }
+            p  { margin: 4px 0; }
+
+            .subtitle { font-size: 1em; margin-bottom: 10px; }
+
+            /* Cards should not straddle a page boundary */
+            .adventure-card, .elective-card,
+            .home-grid > div, .home-col > div {
+                border: 1px solid #bbb;
+                padding: 12px !important;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            /* The schedule is usually why this gets printed */
+            table { font-size: 7.5pt; }
+            th {
+                background: #333 !important;
+                color: #fff !important;
+                position: static;
+                padding: 5px 4px;
+                font-size: 7pt;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            td { padding: 4px; }
+            thead { display: table-header-group; }
+            tr { break-inside: avoid; page-break-inside: avoid; }
+            .table-container { overflow: visible; }
+            .description-col { max-width: 260px; }
+            .den-meeting, .special-event {
+                background: #f2f2f2 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            /* Badges have to survive greyscale */
+            .at-home-tag, .track-tag, .pairs-tag,
+            .tag-decide, .tag-confirm, .tag-head, .tag-fyi {
+                background: #000 !important;
+                color: #fff !important;
+                font-size: 7pt;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            /* The Outdoor Adventurer block is white-on-dark on screen */
+            .oa-hub { background: #fff !important; border: 2px solid #333; }
+            .oa-hub h3, .oa-hub p, .oa-hub div[style*="rgba(255,255,255"] { color: #000 !important; }
+            .oa-hub div[style*="rgba(255,255,255"] { background: #fff !important; border: 1px solid #bbb; }
+
+            a { color: #000; text-decoration: none; }
+            a[href^="http"]::after { content: ""; }
+        }
     </style>
 </head>
 <body>
@@ -394,6 +490,7 @@
             <div class="controls">
                 <button class="btn" onclick="window.open('https://docs.google.com/spreadsheets/d/1yzT9M7d0S1GKIOU1YtEI06s-Vxp9kNud8xcjEKhXnLQ/edit', '_blank')" title="Opens Google Sheets in a new tab">&#128197; Open &amp; Edit Schedule</button>
                 <button class="btn" onclick="loadFromGoogleSheet()" title="Re-read the sheet">&#128260; Refresh</button>
+                <button class="btn" onclick="window.print()" title="Compact, ink-friendly layout">&#128424; Print</button>
             </div>
 
             <div id="loadingMessage" style="text-align: center; padding: 40px; background: rgba(255,255,255,0.7); border-radius: 10px;">
@@ -647,7 +744,7 @@
             </div>
 
             <!-- Outdoor Adventurer Hub -->
-            <div style="margin-bottom: 30px; padding: 28px; background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 55%, #00695c 100%); border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.22);">
+            <div class="oa-hub" style="margin-bottom: 30px; padding: 28px; background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 55%, #00695c 100%); border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.22);">
                 <div style="text-align: center; margin-bottom: 24px;">
                     <div style="display: inline-block; background: rgba(255,255,255,0.18); color: #fff; font-size: 0.8em; font-weight: 700; letter-spacing: 1.5px; padding: 5px 14px; border-radius: 12px; margin-bottom: 12px;">THE BIG ONE</div>
                     <h3 style="color: white; margin: 0 0 10px 0; font-size: 2em;">&#9968; Outdoor Adventurer</h3>
