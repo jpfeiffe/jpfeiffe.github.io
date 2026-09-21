@@ -473,8 +473,42 @@
             </div>
         </div>
 
-        <!-- Parent Meeting Agenda -->
-        <div style="margin-top: 30px; padding: 22px 25px; background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%); border-radius: 10px; border-left: 5px solid #3f51b5;">
+        <!-- Den Calendar -->
+        <div style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%); border-radius: 10px; border-left: 5px solid #00796b;">
+            <h2 style="color: #00695c; margin-top: 0; font-size: 1.8em;">&#128197; Den Calendar</h2>
+            <p style="color: #00695c; margin-bottom: 20px;">Live den calendar &mdash; mirrored from Scoutbook. RSVP in Scoutbook.</p>
+
+            <style>
+                .den-calendar-wrap {
+                    background: white;
+                    padding: 10px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                    border-left: 4px solid #00897b;
+                    overflow: hidden;
+                }
+                .den-calendar-wrap iframe {
+                    display: block;
+                    width: 100%;
+                    max-width: 100%;
+                    height: 600px;
+                    border: 0;
+                }
+                @media (max-width: 760px) {
+                    .den-calendar-wrap { padding: 6px; }
+                    .den-calendar-wrap iframe { height: 480px; }
+                }
+            </style>
+
+            <div class="den-calendar-wrap">
+                <iframe src="https://calendar.google.com/calendar/embed?src=42878b986d3b6947d1cf53fee30eb94cc559227e9b84042130ab5c2b305d0486%40group.calendar.google.com&amp;ctz=America%2FLos_Angeles&amp;mode=AGENDA&amp;showTitle=0&amp;showPrint=0&amp;showTabs=1&amp;showCalendars=0" style="border:0" width="100%" height="600" frameborder="0" scrolling="no" title="AOL Den 7 calendar"></iframe>
+            </div>
+
+            <p style="color: #00695c; margin: 14px 0 0 0; font-size: 0.92em;">Add to your calendar: <a href="https://calendar.google.com/calendar/ical/42878b986d3b6947d1cf53fee30eb94cc559227e9b84042130ab5c2b305d0486%40group.calendar.google.com/public/basic.ics" class="adv-link" style="color: #00695c; font-weight: 600;">Subscribe (.ics)</a></p>
+        </div>
+
+        <!-- Parent Meeting Agenda - hidden: the meeting has passed. Remove the display:none below to bring it back. -->
+        <div style="display: none; margin-top: 30px; padding: 22px 25px; background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%); border-radius: 10px; border-left: 5px solid #3f51b5;">
             <h2 style="color: #283593; margin: 0 0 4px 0; font-size: 1.5em;">&#128203; Parent Meeting &mdash; Agenda</h2>
             <p style="color: #3f51b5; margin: 0 0 16px 0; font-size: 0.92em;">Detail on everything below is further down the page.</p>
 
@@ -490,8 +524,8 @@
             </ol>
         </div>
 
-        <!-- Schedule -->
-        <div class="schedule-section" style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #eceff1 0%, #cfd8dc 100%); border-radius: 10px; border-left: 5px solid #37474f;">
+        <!-- Schedule - hidden: superseded by the Den Calendar above. Remove the display:none below to bring it back. -->
+        <div class="schedule-section" style="display: none; margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #eceff1 0%, #cfd8dc 100%); border-radius: 10px; border-left: 5px solid #37474f;">
             <h2 style="color: #263238; margin-top: 0; font-size: 1.8em;">&#128198; The Schedule</h2>
             <p style="color: #37474f; margin: 0 0 6px 0;">Every den meeting, pack meeting, campout and sign-up slot for 2026&ndash;27. This table is live &mdash; it reads the shared Google Sheet each time the page loads, so edits there show up here.</p>
             <p style="color: #37474f; margin: 0 0 18px 0;">Sign-up slots are the cells marked <span style="color: #ff0000; font-weight: bold;">&lt;Sign-Up!&gt;</span> &mdash; a planner, two helpers and snacks for each den meeting.</p>
@@ -534,7 +568,8 @@
             <p style="color: #546e7a; margin: 16px 0 0 0; font-size: 0.92em;"><em>Dates assume the proposed Tuesday pattern. If the den picks a different night, they shift.</em></p>
         </div>
 
-        <div class="print-only" style="margin-top: 16px; padding: 12px 16px; border: 1px solid #999; border-radius: 6px;">
+        <!-- Companion to the hidden Schedule section above; hidden with it. -->
+        <div class="print-only" style="display: none !important; margin-top: 16px; padding: 12px 16px; border: 1px solid #999; border-radius: 6px;">
             <strong>&#128198; Schedule not included.</strong> Den meetings, campouts and sign-up slots live in the shared sheet and change often, so they are left off the printout.
             See <strong>jpfeiffe.github.io/aols.html</strong> for the live schedule.
         </div>
@@ -622,40 +657,6 @@
                 </div>
 
             </div>
-        </div>
-
-        <!-- Den Calendar -->
-        <div style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%); border-radius: 10px; border-left: 5px solid #00796b;">
-            <h2 style="color: #00695c; margin-top: 0; font-size: 1.8em;">&#128197; Den Calendar</h2>
-            <p style="color: #00695c; margin-bottom: 20px;">Live den calendar &mdash; mirrored from Scoutbook. RSVP in Scoutbook.</p>
-
-            <style>
-                .den-calendar-wrap {
-                    background: white;
-                    padding: 10px;
-                    border-radius: 8px;
-                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-                    border-left: 4px solid #00897b;
-                    overflow: hidden;
-                }
-                .den-calendar-wrap iframe {
-                    display: block;
-                    width: 100%;
-                    max-width: 100%;
-                    height: 600px;
-                    border: 0;
-                }
-                @media (max-width: 760px) {
-                    .den-calendar-wrap { padding: 6px; }
-                    .den-calendar-wrap iframe { height: 480px; }
-                }
-            </style>
-
-            <div class="den-calendar-wrap">
-                <iframe src="https://calendar.google.com/calendar/embed?src=42878b986d3b6947d1cf53fee30eb94cc559227e9b84042130ab5c2b305d0486%40group.calendar.google.com&amp;ctz=America%2FLos_Angeles&amp;mode=AGENDA&amp;showTitle=0&amp;showPrint=0&amp;showTabs=1&amp;showCalendars=0" style="border:0" width="100%" height="600" frameborder="0" scrolling="no" title="AOL Den 7 calendar"></iframe>
-            </div>
-
-            <p style="color: #00695c; margin: 14px 0 0 0; font-size: 0.92em;">Add to your calendar: <a href="https://calendar.google.com/calendar/ical/42878b986d3b6947d1cf53fee30eb94cc559227e9b84042130ab5c2b305d0486%40group.calendar.google.com/public/basic.ics" class="adv-link" style="color: #00695c; font-weight: 600;">Subscribe (.ics)</a></p>
         </div>
 
         <!-- Troop Meeting Times -->
